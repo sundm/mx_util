@@ -360,6 +360,9 @@ public final class MXBaseUtil {
 
 	public static String stringMoneyTrans(String money, int base) {
 		long nNum = Long.valueOf(money, base);
+		if (nNum > 100000) {
+			return "0.00元";
+		}
 		String szData;
 		if (nNum >= 100) {
 			szData = String.valueOf(nNum / 100) + '.';
